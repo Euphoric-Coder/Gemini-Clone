@@ -1,11 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 #root {
@@ -124,5 +127,39 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .sidebar {
+    @apply min-h-[100vh] inline-flex flex-col justify-between bg-[#f0f4f9] p-[25px] px-[15px] transition-all duration-300 ease-in-out;
+  }
+  .sidebar img{
+    @apply w-[36px] 
+  }
+  .sidebar .menu {
+    @apply block ml-[10px] cursor-pointer
+  }
+  .sidebar .new-chat {
+    @apply mt-[50px] inline-flex items-center gap-[10px] p-[10px] px-[15px] bg-[#e6eaf1] rounded-full text-[15px] text-gray-500 cursor-pointer
+  }
+  .sidebar .recent {
+    @apply flex flex-col
+  } 
+  .sidebar .recent-title {
+    @apply mt-[30px] mb-[10px] 
+  } 
+  .sidebar .recent-entry {
+    @apply flex items-center gap-[10px] p-[10px] pr-[40px] rounded-full text-[#211f1f] cursor-pointer
+  } 
+  .sidebar .recent-entry:hover {
+    @apply bg-[#e2e6eb] 
+  } 
+  .sidebar .bottom {
+    @apply flex flex-col 
+  }
+
+  .sidebar .bottom-item {
+    @apply pr-[10px] cursor-pointer
   }
 }
